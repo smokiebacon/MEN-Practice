@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
         } else {
            console.log(allHouse);
            res.render('../views/index.ejs', {
-           house: allHouse 
+           house: allHouse //key becomes a variable inside the template
            });
         }
     });
@@ -55,7 +55,9 @@ router.get('/:id', (req, res) => {
 })
 //delete
 router.delete('/:id', (req, res) => {
-
+    House.findOneAndRemove(req.params.id, (err, deletedHouse) => {
+        err ? res.send(err) : res.redirect('/houses');
+    })
 })
 
 module.exports = router;
