@@ -10,11 +10,20 @@ const House = require('../models/houses.js');
 
 //index route
 router.get('/', (req, res) => {
-
+    House.find({}, (err, allHouse) => {
+        if (err) {
+            res.send(err)
+        } else {
+           console.log(allHouse);
+           res.render('../views/index.ejs', {
+           house: allHouse 
+           });
+        }
+    });
 })
 //new 
 router.get('/new', (req, res) => {
-    res.render('../views/new');
+    res.render('../views/new.ejs');
 })
 
 
@@ -27,7 +36,7 @@ router.post('/', (req, res) => {
             console.log(createdHouse);
             res.redirect('/houses');
          }
-     } )
+     })
 })
 
 //edit, getting a form to show to ideas
