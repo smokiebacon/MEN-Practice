@@ -3,8 +3,8 @@
 <h1>Index Page</h1>
 <ul>
  <% house.forEach(home => { %>
-    <li><%= home.name %>, is located at <%= home.location %>. 
-    It has <%= home.bedroom %> bedrooms</li>
+    <li><a href="/houses/<%=home._id%>"><%= home.name %></a>, is located at <%= home.location %>. 
+    It has <%= home.beds %> bedrooms</li>
 <% }) %>
 </ul>
 <a href="/houses/new">Edit Home</a>

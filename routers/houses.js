@@ -52,7 +52,9 @@ router.put('/:id', (req, res) => {
 //show which is //:id
 router.get('/:id', (req, res) => {
     House.findById(req.params.id, (err, foundHouse) => {
-        err ? res.send(err) : res.render('../views/show.ejs')
+        err ? res.send(err) : res.render('../views/show.ejs', {
+            house: foundHouse
+        })
     })
 
 })
