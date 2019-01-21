@@ -1,6 +1,14 @@
-<%- include('/partials/header') %>
+<%- include('./partials/header') %>
+<main>
+<h1>Index Page</h1>
+<ul>
+ <% house.forEach(home => { %>
+    <li><%= home.name %>, is located at <%= home.location %>. 
+    It has <%= home.bedroom %> bedrooms</li>
+<% }) %>
+</ul>
+</main>
 
 
 
-
-<%- include('/partials/footer') %>
+<%- include('./partials/footer') %>

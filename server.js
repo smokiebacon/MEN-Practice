@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 
 //routers
-app.use('/house', housesRouter); //this is naming our home route essentially
+app.use('/houses', housesRouter); //should be plural //this is naming our home route essentially
 
 
 
