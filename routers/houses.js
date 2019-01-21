@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 //model data
-const House = require('./models/houses.js');
+const House = require('../models/houses.js');
 
 //7 restful routes
 
@@ -20,7 +20,14 @@ router.get('/new', (req, res) => {
 
 //create, POSTing data to server
 router.post('/', (req, res) => {
-
+     House.create(req.body, (err, createdHouse) => {
+         if (err) {
+             res.send(err)
+         } else {
+            console.log(createdHouse);
+            res.redirect('/houses');
+         }
+     } )
 })
 
 //edit, getting a form to show to ideas
