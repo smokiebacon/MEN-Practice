@@ -3,6 +3,7 @@
 <h1>Show Page</h1>
 <p>The <%=house.name%> is in <%= house.locaion %>
 , has <%= house.beds %> bedrooms, and a square feet of <%= house.sqrt %> </p>
+<a href="/houses/<%= house._id %>/edit">Edit this Home</a>
 
 </main>
 <%- include('./partials/footer') %>
