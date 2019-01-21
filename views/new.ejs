@@ -1,0 +1,16 @@
+<%- include('./partials/header') %>
+ <main>
+<h1>New Page</h1>
+<form action="/house" method="POST">
+    Name: <input type="text" name="name"><br>
+    Location: <input type="text" name="location"><br>
+    Beds: <input type="number" name="beds"><br>
+    Square Feet:<input type="number" name="sqft" min="0"><br>
+    Bathroom: <input type="number" name="bathroom"><br>
+    <button> Create a House</button>
+</form>
+</main>
+
+
+
+<%- include('/partials/footer') %>
