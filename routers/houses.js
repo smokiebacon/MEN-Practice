@@ -39,9 +39,13 @@ router.post('/', (req, res) => {
      })
 })
 
-//edit, getting a form to show to ideas
+//edit, getting a form to show to edits
 router.get('/:id/edit', (req, res) => {
-
+    House.findByIdAndUpdate(req.params.id, (err, editedHouse) => {
+        err ? res.send(err) : res.render('/../views/edit.ejs', {
+            house: editedHouse
+        })
+    })
 })
 //update PUTing data into the data
 router.put('/:id', (req, res) => {
