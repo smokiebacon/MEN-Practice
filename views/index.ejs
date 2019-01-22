@@ -4,7 +4,7 @@
 <ul>
  <% house.forEach(home => { %>
     <li><a href="/houses/<%=home._id%>"><%= home.name %></a>, is located at <%= home.location %>. 
-    It has <%= home.beds %> bedrooms</li>
+    It has <%= home.beds %> bedrooms, <%= home.bathroom %> bathrooms, and has <%= home.sqft %> square feet.</li>
 <% }) %>
 </ul>
 <a href="/houses/new">Create a New Home</a>

@@ -1,4 +1,4 @@
-<%- include('/partials/header') %>
+<%- include('./partials/header') %>
 <main>
 <h1>Edit Page</h1>
 <form action="/houses/<%= house._id %>/edit?_method=PUT" method="POST">
@@ -7,8 +7,8 @@
     Beds: <input type="number" name="beds" value="<%= house.beds %>"><br>
     Square Feet:<input type="number" name="sqft" min="0" value="<%= house.sqft %>"><br>
     Bathroom: <input type="number" name="bathroom" value="<%= house.bathroom %>"><br>
-    <button> Create a House</button>
+    <button type="submit"> Submit Changes to House</button>
 </form>
 <a href="/houses">Go back</a>
 </main>
-<%- include('/partials/footer') %>
+<%- include('./partials/footer') %>
